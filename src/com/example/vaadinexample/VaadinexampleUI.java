@@ -8,6 +8,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -26,6 +27,8 @@ public class VaadinexampleUI extends UI {
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setMargin(true);
 		setContent(layout);
+		
+		ComboBox combo = new ComboBox();
 
 		Button button = new Button("Click Me");
 		button.addClickListener(new Button.ClickListener() {
@@ -33,7 +36,8 @@ public class VaadinexampleUI extends UI {
 				layout.addComponent(new Label("Thank you for clicking"));
 			}
 		});
+		layout.addComponent(combo);
 		layout.addComponent(button);
 	}
-
+	
 }
